@@ -1,0 +1,42 @@
+{
+  "name": "ibs",
+  "private": true,
+  "scripts": {
+    "dep": "yarn && npm-run-all --parallel dep:*",
+    "dep:main": "cd src/main && yarn",
+    "dev": "yarn clean:dev && npm-run-all --parallel dev:*",
+    "dev:main": "cd src/main && yarn start",
+    "dev:final": "rollup -c rollup.config.dev.js --bundleConfigAsCjs -w",
+    "build": "yarn clean:build && npm-run-all --parallel build:* && rollup -c rollup.config.build.js --bundleConfigAsCjs",
+    "build:main": "cd src/main && yarn build",
+    "clean:dev": "npm-run-all --parallel clean:dev:* clean:main",
+    "clean:dev:final": "rimraf dev",
+    "clean:build": "npm-run-all --parallel clean:build:* clean:main",
+    "clean:build:final": "rimraf build",
+    "clean:main": "cd src/main && yarn clean"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@types/chrome": "^0.0.243",
+    "@types/uuid": "^9.0.6",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.26.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-shell": "^1.0.9",
+    "rollup-plugin-ts": "^3.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@extractus/feed-extractor": "^7.0.6",
+    "dayjs": "^1.11.10",
+    "idb": "^7.1.1",
+    "node-html-parser": "^6.1.10",
+    "tiny-async-pool": "^2.1.0",
+    "uuid": "^9.0.1"
+  }
+}

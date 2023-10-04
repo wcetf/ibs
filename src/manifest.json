@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "version": "0.2.0",
+  "name": "IBS - Independent Blog Subscriber",
+  "short_name": "IBS",
+  "description": "Stay updated with bookmarked independent blogs.",
+  "homepage_url": "https://github.com/wcetf/ibs",
+  "background": {
+    "service_worker": "background/index.js"
+  },
+  "action": {
+    "default_title": "Recent Updates"
+  },
+  "icons": {
+    "128": "assets/icons/icon-128.png",
+    "48": "assets/icons/icon-48.png",
+    "16": "assets/icons/icon-16.png"
+  },
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "unlimitedStorage",
+    "alarms",
+    "background",
+    "tabs",
+    "favicon"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["_favicon/*"],
+      "matches": ["<all_urls>"],
+      "extension_ids": ["*"]
+    }
+  ]
+}
