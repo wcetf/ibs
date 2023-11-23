@@ -18,7 +18,6 @@ import {
   MSG_UNREAD,
   MSG_NOTIFICATION_POLICIES_UPDATED,
 } from '../../common/message';
-import { faviconUrlFromBrowser } from '../../common/url';
 import { notifyUnread } from '../notification';
 import { Feed, getFeed } from './feed';
 import { getMeta } from './html';
@@ -261,7 +260,7 @@ function createSync(site: Site): Synchronization {
   return {
     homeUrl: site.homeUrl,
     feedUrl: '',
-    faviconUrl: faviconUrlFromBrowser(site.homeUrl),
+    faviconUrl: '',
     title: site.domain,
     homeTitle: '',
     description: '',

@@ -29,7 +29,7 @@ export default function Site(props: Props) {
       onClick={props.onClick}
     >
       <Favicon
-        url={props.faviconUrl || ''}
+        url={props.faviconUrl || props.homeUrl.replace(/\/$/, '') + '/favicon.ico'}
         freezing={props.freezing}
         loadedFaviconUrls={props.loadedFaviconUrls}
       />
