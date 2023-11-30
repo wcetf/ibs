@@ -73,9 +73,7 @@ export default function ItemList() {
               rowRenderer={({ index, key, style }) => (
                 (index && index === items[0].length) ? (
                   <div key={key} style={style} className='flex items-center px-6 opacity-30'>
-                    <Divider className='truncate'>
-                      The following list is composed of old contents and contents that don't remind you.
-                    </Divider>
+                    <Divider className='truncate'></Divider>
                   </div>
                 ) : (
                   <Item
