@@ -6,9 +6,6 @@ import "@arco-themes/react-ibs-extension/css/arco.css";
 import 'react-virtualized/styles.css';
 import './index.css';
 import App from './App';
-import { initTheme } from './theme';
-
-initTheme();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
